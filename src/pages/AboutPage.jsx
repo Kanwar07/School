@@ -11,6 +11,7 @@ import Vision from "../baseComponents/Vision";
 import History from "../baseComponents/History";
 import InfraStructureAndFacilities from "../baseComponents/InfraStructureAndFacilities";
 import school from "../assets/School.png";
+import { motion } from "framer-motion";
 
 function AboutPage() {
   return (
@@ -23,7 +24,12 @@ function AboutPage() {
           backgroundPosition: "top",
         }}
       >
-        <div className="absolute flex flex-col items-center text-[#ffffff] px-20 w-full">
+        <motion.div
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+          className="absolute flex flex-col items-center text-[#ffffff] px-20 w-full"
+        >
           <Tabs defaultValue="history" className="w-full">
             <TabsList className="flex flex-row justify-between items-center mb-10 px-8 bg-[#d3d3d3]/[0.8]">
               <TabsTrigger value="history">History</TabsTrigger>
@@ -52,7 +58,7 @@ function AboutPage() {
               <InfraStructureAndFacilities />
             </TabsContent>
           </Tabs>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import school from "../assets/School.png";
+import { motion } from "framer-motion";
 
 function HomePage() {
   return (
@@ -13,11 +14,23 @@ function HomePage() {
         }}
       >
         <div className="absolute flex flex-col items-center text-[#ffffff]">
-          <h1 className="text-[40px] mb-10">Springdale Public School</h1>
-          <p className="text-[20px]">
+          <motion.h1
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            className="text-[40px] mb-10"
+          >
+            Springdale Public School
+          </motion.h1>
+          <motion.p
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 2, delay: 0.5, ease: "easeInOut" }}
+            className="text-[20px]"
+          >
             Welcome to Springdale Public School, where we nurture young minds
             for a brighter future
-          </p>
+          </motion.p>
         </div>
       </div>
     </section>
